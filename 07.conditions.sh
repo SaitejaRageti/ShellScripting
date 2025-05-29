@@ -2,6 +2,7 @@
 
 number1=$1
 number2=$2
+date
 
 timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 echo "starting my script at : $timestamp"
