@@ -11,6 +11,7 @@ if [ $Sum -gt 60 ]
 then
     echo "$Sum id greater than 60"
 elif [ $Sum -eq 60 ]
+then
     echo "$Sum is equal to 60"
 else
     echo "its a small number"
