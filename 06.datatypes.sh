@@ -1,7 +1,7 @@
 #!/bin/bash
 
 number1=25
-number2=35
+number2=55
 timestamp=$(date)
 echo "starting my script on $timestamp"
 Sum=$(($number1+$number2))
