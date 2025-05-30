@@ -28,6 +28,7 @@ then
     echo " mysql is installed already"
     
 else
+    echo "mysql is not installed yet going to install"
     dnf install mysql -y
     validate $? "mysql"
 fi 
@@ -38,6 +39,7 @@ if [ $? -eq 0 ]
 then
     echo "python is installed already"
 else
+    echo "python is not installed yet going to install"
     dnf install python3 -y
     validate $? "python"
 fi
