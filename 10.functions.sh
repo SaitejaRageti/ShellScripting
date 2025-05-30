@@ -11,7 +11,8 @@ else
 fi
 
 validate(){
-    if [ $1 -eq 0 ]then;
+    if [ $1 -eq 0 ]
+    then
         echo "installing $2 is success"
     else
         echo "installing $2 is failure"
@@ -22,7 +23,8 @@ validate(){
 
 dnf list installed mysql
 
-if [ $? -eq 0 ]then;
+if [ $? -eq 0 ]
+then
     echo " mysql is installed already"
     exit
 else
