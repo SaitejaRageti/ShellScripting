@@ -11,7 +11,7 @@ then
     echo -e "$R you are running this script with non root user. Please run with root user"
     exit 1  ##GIVE OTHER THAN 0 UPTO 127
 else
-    echo -e "$G you are running with ROOT user....GO AHEAD"
+    echo -e "$G you are running with ROOT user....GO AHEAD $N"
 fi
 
 dnf list installed mysql 
