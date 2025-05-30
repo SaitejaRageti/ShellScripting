@@ -31,4 +31,14 @@ else
     dnf install mysql -y
     validate $? mysql
 fi 
+nf list installed python
+
+if [ $? -eq 0 ]
+then
+    echo " python is installed already"
+    exit
+else
+    dnf install python -y
+    validate $? python
+fi
 
