@@ -3,10 +3,10 @@
 USERID=$(id -u)
 script_start_time=$(date)
 echo "$script_start_time"
-script-name=$(basename "$0" .sh)
+script_name=$(echo $0 | cut -d "." -f1)
 LOGS_FOLDER="/var/logs/shell_scripting_logs"
 mkdir -p $LOGS_FOLDER
-Logfile=$LOGS_FOLDER/"${script-name}.log"
+Logfile=$LOGS_FOLDER/$script_name.log"
 
 if [ $USERID -ne 0 ]
 then
@@ -27,7 +27,7 @@ validate(){
 
 }
 
-dnf list installed mysql & | tee -a $LOG_FILE
+dnf list installed mysql &>>$LOG_FILE
 
 if [ $? -eq 0 ]
 then
@@ -39,7 +39,7 @@ else
     validate $? "mysql"
 fi 
 
-dnf list installed python3 &  | tee -a $LOG_FILE
+dnf list installed python3 & >>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
@@ -50,7 +50,7 @@ else
     echo "python is already installed nothing to do" | tee -a $LOG_FILE
 fi
 
-dnf list installed nginx & | tee -a $LOG_FILE
+dnf list installed nginx & >>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo "nginx is not installed... going to install it"
