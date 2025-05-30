@@ -31,7 +31,8 @@ else
     dnf install mysql -y
     validate $? mysql
 fi 
-nf list installed python
+
+dnf list installed python
 
 if [ $? -eq 0 ]
 then
